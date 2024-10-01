@@ -3,9 +3,6 @@ body {
     height: 100vh;
 }
 
-<<<<<<< HEAD
-=======
-
 /* HASIERAKO MENUA */
 
 .hasiera {
@@ -64,7 +61,6 @@ h3 {
 
 /* INTERFAZ */
 
->>>>>>> 7c6ea30f9971bace9bdc8eb6b7d22ec8b89339c2
 .background {
     background-image: url(IMG/images.jfif);
     height: 100%;
@@ -85,9 +81,15 @@ h3 {
 }
 
 #cookie button {
-    background-color: rgba(240, 248, 255, 0);
-    border: 0;
+    background-color: transparent;
+    border: none;
     font-size: 15em;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+#cookie button:hover {
+    transform: scale(1.1);
 }
 
 .aside2 {
