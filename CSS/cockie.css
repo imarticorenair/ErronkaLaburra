@@ -6,16 +6,59 @@ body {
 
 /* HASIERAKO MENUA */
 
-.hasiera h1 {
-    padding-top: 3;
+.hasiera {
+    background: linear-gradient(rgb(231, 167, 167), rgb(61, 50, 50));
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+    color: white;
+}
+
+h1 {
     font-size: 4em;
-    text-align: center;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
-.hasiera h3 {
-    text-align: center;
+    h1::first-letter {
+        font-size: 2em;
+    }
+
+h3 {
+    margin-bottom: 40px;
+    font-size: 1em;
 }
 
+#botoia {
+    margin-top: 20px;
+}
+
+#botoia input {
+    background: linear-gradient(45deg, #415331, #24d1dd); 
+    color: white;
+    font-size: 2em;
+    width: 300px;
+    height: 80px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+#botoia input:hover {
+    background: linear-gradient(45deg, #415331, #24d1dd,);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+}
 
 /* INTERFAZ */
 
