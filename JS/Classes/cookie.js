@@ -10,7 +10,7 @@ class Cookie {
     }
 
     updateDisplay() {
-        document.getElementById("cookieCount").innerText = this.cookieCount.toFixed(1);
+        document.getElementById("cookieCount").innerText = this.cookieCount.toFixed(0);
         document.getElementById("productionRate").innerText = this.productionRate.toFixed(1);
     }
 

@@ -12,12 +12,12 @@ let upgrades = [
 function displayUpgrades() {
     let upgradeButtonsDiv = document.getElementById("upgradeButtons");
     upgradeButtonsDiv.innerHTML = '';
-    upgrades.forEach(upgrade => {
+    for (let upgrade of upgrades) {
         let button = document.createElement("button");
         button.innerText = `${upgrade.name} (${upgrade.getCost()} gaileta)`;
         button.onclick = () => buyUpgrade(upgrade);
         upgradeButtonsDiv.appendChild(button);
-    });
+    }    
 }
 
 function addCookie() {
