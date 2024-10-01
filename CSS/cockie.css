@@ -1,0 +1,47 @@
+body {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    height: 100vh;
+}
+
+
+/* HASIERAKO MENUA */
+
+.hasiera h1 {
+    padding-top: 3;
+    font-size: 4em;
+    text-align: center;
+}
+
+.hasiera h3 {
+    text-align: center;
+}
+
+
+/* INTERFAZ */
+
+.background {
+    background-image: url(IMG/images.jfif);
+}
+
+#nagusia {
+    display: flex;
+    justify-content: space-around;
+}
+
+.aside1 {
+    width: 50%;
+    height: 100vh;
+    border-right: 1px solid black;
+}
+
+.aside2 {
+    width: 50%;
+    height: 100vh;
+    border-left: 1px solid black;
+}
+
+#cockie button {
+    background-color: rgba(240, 248, 255, 0);
+    border: 0;
+    font-size: 15em;
+}
