@@ -5,14 +5,13 @@ body {
 
 
 /* HASIERAKO MENUA */
-
-.hasiera {
+.login {
     background: linear-gradient(rgb(231, 167, 167), rgb(61, 50, 50));
     height: 100vh;
     margin: 0;
     display: flex;
     justify-content: center;
-    align-items: baseline;
+    align-items: center;
     font-family: Arial, sans-serif;
 }
 
@@ -28,13 +27,13 @@ h1 {
     letter-spacing: 2px;
 }
 
-    h1::first-letter {
+    .first-letter {
         font-size: 2em;
     }
 
 h3 {
     margin-bottom: 40px;
-    font-size: 1em;
+    font-size: 1.5em;
 }
 
 #botoia {
@@ -42,7 +41,7 @@ h3 {
 }
 
 #botoia input {
-    background: linear-gradient(45deg, #415331, #24d1dd); 
+    background: linear-gradient(45deg, #FF512F, #DD2476);
     color: white;
     font-size: 2em;
     width: 300px;
@@ -55,12 +54,35 @@ h3 {
 }
 
 #botoia input:hover {
-    background: linear-gradient(45deg, #415331, #24d1dd,);
+    background: linear-gradient(45deg, #DD2476, #FF512F);
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
     transform: scale(1.05);
 }
 
 /* INTERFAZ */
+
+.itxura {
+    padding: 2%;
+    border: 1px solid grey;
+    border-radius: 5px 5px 5px;
+    height: 90vh;
+    width: 70%;
+    margin: 0 auto;
+    background-color: rgb(199, 202, 202);
+}
+
+header {
+    text-align: center;
+}
+
+hr {
+    border: 1px solid;
+}
+
+h2 {
+    margin-top: -5px;
+    font-size: 2em;
+}
 
 .background {
     background-image: url(IMG/images.jfif);
@@ -73,18 +95,51 @@ h3 {
 
 .aside1 {
     width: 50%;
-    height: 100vh;
+    height: 70vh;
     border-right: 1px solid black;
 }
 
 .aside2 {
     width: 50%;
-    height: 100vh;
+    height: 70vh;
     border-left: 1px solid black;
 }
 
-#cockie button {
+.cookie button {
     background-color: rgba(240, 248, 255, 0);
     border: 0;
     font-size: 15em;
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 100% 100% 100% 100%;
 }
+
+
+.aside2 h1 {
+    text-align: center;
+    font-size: 2em;
+}
+
+    .funtzioak {
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 2%;
+        align-items:last baseline;
+    }
+
+        .funtzioak button {
+            width: 90%;
+            height: 100px;
+            margin: 0 auto;
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStjwzt_EbIfamX61JiwLK6MJCTTusnoNIFkw&s);
+            border-radius: 5px 5px 5px;
+            margin-bottom: 5%;
+            color: white;
+            font-size: 2.5em;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+            button:hover {
+                cursor: pointer;
+                transform: scale(1.02);
+            }
