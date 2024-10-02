@@ -109,12 +109,11 @@ function loadUpgradeProgress() {
 }
 
 function updateCookieDisplay() {
-    // Check the cookie count and update the display accordingly
     if (cookie.cookieCount >= 100000) {
         document.getElementById('coockie').style.backgroundImage = "url('../img/sorpresa.png')";
     } else {
-        document.getElementById('coockie').style.backgroundImage = ""; // Reset background image
-        document.getElementById('coockie').innerHTML = "🍪"; // Default display
+        document.getElementById('coockie').style.backgroundImage = "";
+        document.getElementById('coockie').innerHTML = "🍪";
     }
 }
 
