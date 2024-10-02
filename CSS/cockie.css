@@ -134,7 +134,7 @@ header {
 
 .aside1 {
     width: 50%;
-    height: 70vh;
+    height: 75vh;
     border-right: 1px solid gray;
 }
 
@@ -161,7 +161,7 @@ header {
 
 .aside2 {
     width: 50%;
-    height: 70vh;
+    height: 75vh;
     border-left: 1px solid gray;
 }
     .aside2 h1 {
@@ -224,5 +224,7 @@ header {
 
     .powerups button {
         width: 20%;
-        height: 100px;
+        height: 115px;
+        border-radius: 7px 7px 7px;
+        border: 2px solid gray;
     }
