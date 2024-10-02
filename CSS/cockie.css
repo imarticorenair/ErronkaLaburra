@@ -215,3 +215,14 @@ header {
                         #Meatze {
                             background-image: url(../IMG/meatze.png);
                         }
+
+
+.powerups {
+    display: flex;
+    justify-content: space-around;
+}
+
+    .powerups button {
+        width: 20%;
+        height: 100px;
+    }
