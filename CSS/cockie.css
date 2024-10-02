@@ -1,8 +1,7 @@
 body {
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     height: 100vh;
 }
-
 
 /* HASIERAKO MENUA */
 .login {
@@ -75,6 +74,10 @@ header {
     text-align: center;
 }
 
+    p {
+        font-size: 1.2em;
+    }
+
 hr {
     border: 1px solid;
 }
@@ -105,13 +108,14 @@ h2 {
     border-left: 1px solid black;
 }
 
-.cookie button {
+.cockie button {
     background-color: rgba(240, 248, 255, 0);
     border: 0;
     font-size: 15em;
     width: 90%;
     margin: 0 auto;
     border-radius: 100% 100% 100% 100%;
+    margin-top: 50px;
 }
 
 
@@ -120,14 +124,13 @@ h2 {
     font-size: 2em;
 }
 
-    .funtzioak {
+    #upgradeButtons {
         display: flex;
         flex-wrap: wrap;
         padding-top: 2%;
-        align-items:last baseline;
     }
 
-        .funtzioak button {
+        #upgradeButtons button {
             height: 100px;
             width: 90%;
             margin: 0 auto;

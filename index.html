@@ -3,36 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coockie Clicker</title>
-    <link rel="stylesheet" href="CSS/cockie.css">
-    <link rel="shortcut icon" href="IMG/fabrika.png">
-    <script></script>
+    <title>Cookie Clicker</title>
+    <link rel="stylesheet" href="css/cockie.css">
+    <link rel="shortcut icon" href="img/fabrika.png">
 </head>
 <body>
     <div class="itxura">
         <header>
             <h1>Izena</h1>
-            <h2>0</h2>
-            <h2>0</h2>
+            <p>Gailetak: <span id="cookieCount">0</span></p>
+            <p>Ekoizpena: <span id="productionRate">0</span> gaileta/s</p>
         </header>
         <hr>
         <div id="nagusia">
             <div class="background"></div>
             <div class="aside1">
-                <div class="cookie">
-                    <button onclick="">🍪</button>
+                <div class="cockie">
+                    <button onclick="addCookie()">🍪</button>
                 </div>
             </div>
             <div class="aside2">
                 <h1>HOBEKUNTZAK</h1>
-                <div class="funtzioak">
-                    <button>Kurtsorea</button>
-                    <button>Amona</button>
-                    <button>Baserria</button>
-                    <button>Meatze</button>
+                <div id="upgradeButtons">
                 </div>
             </div>
         </div>
     </div>
+    
+    <script src="js/Classes/cookie.js"></script>
+    <script src="js/Classes/upgrade.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
