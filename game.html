@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Clicker</title>
+    <link rel="stylesheet" href="css/cockie.css">
+    <link rel="shortcut icon" href="img/fabrika.png">
+</head>
+<body>
+    <div class="itxura">
+        <header>
+            <h2 id="tituloa" onclick="aldatuIzena()">Aldatu izena</h2>
+            <p>Gailetak: <span id="cookieCount">0</span></p>
+            <p>Ekoizpena: <span id="productionRate">0</span> gaileta/s</p>
+        </header>
+        <hr>
+        <div id="nagusia">
+            <div class="background"></div>
+            <div class="aside1">
+                <div class="cockie">
+                    <button onclick="addCookie()">🍪</button>
+                </div>
+            </div>
+            <div class="aside2">
+                <h1>HOBEKUNTZAK</h1>
+                <div id="upgradeButtons">
+                    <div id="Kurtsorea"></div>
+                    <div id="Amona"></div>
+                    <div id="Baserria"></div>
+                    <div id="Meatze"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/Classes/cookie.js"></script>
+    <script src="js/Classes/upgrade.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
