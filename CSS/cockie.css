@@ -6,10 +6,11 @@ body {
 /* HASIERAKO MENUA */
 .login {
     background: linear-gradient(rgb(231, 167, 167), rgb(61, 50, 50));
+    width: 80%;
     height: 100vh;
-    margin: 0;
+    margin: 0 auto;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     font-family: Arial, sans-serif;
 }
@@ -58,6 +59,14 @@ h3 {
     transform: scale(1.05);
 }
 
+aside img {
+     width: 70%;
+}
+
+#barra {
+    height: 200px;
+}
+
 /* INTERFAZ */
 
 .itxura {
@@ -83,32 +92,27 @@ header {
         border-radius: 7px 7px 7px;
     }
 
-    p {
-        font-size: 1.2em;
-        width: 20%;
-        margin: 0 auto;
-        color: white;
-        background-color: #817b7e94;
-        border-radius: 7px 7px 7px;
-    }
+        p {
+            font-size: 1.2em;
+            width: 20%;
+            margin: 0 auto;
+            color: white;
+            background-color: #817b7e94;
+            border-radius: 7px 7px 7px;
+        }
 
-p {
-    font-size: 1.2em;
-}
+            hr {
+                border: 1px solid;
+            }
 
+                h2 {
+                    margin-top: -5px;
+                    font-size: 2em;
+                }
 
-hr {
-    border: 1px solid;
-}
-
-h2 {
-    margin-top: -5px;
-    font-size: 2em;
-}
-
-.background {
-    background-image: url(IMG/images.jfif);
-}
+                    .background {
+                        background-image: url(IMG/images.jfif);
+                    }
 
 #nagusia {
     display: flex;
@@ -121,82 +125,78 @@ h2 {
     border-right: 1px solid black;
 }
 
+    .cockie button {
+        background-color: rgba(240, 248, 255, 0);
+        border: 0;
+        font-size: 15em;
+        width: 90%;
+        margin: 0 auto;
+        border-radius: 100% 100% 100% 100%;
+        margin-top: 50px;
+        transition: all 0.3s ease-in-out;
+
+    }
+
+        .cockie:hover {
+            transform: scale(1.05);
+        }
+
+            .cockie button:active {
+                transform: scale(1.1);
+            }
+
+
 .aside2 {
     width: 50%;
     height: 70vh;
     border-left: 1px solid black;
 }
-
-.cockie button {
-    background-color: rgba(240, 248, 255, 0);
-    border: 0;
-    font-size: 15em;
-    width: 90%;
-    margin: 0 auto;
-    border-radius: 100% 100% 100% 100%;
-    margin-top: 50px;
-    transition: all 0.3s ease-in-out;
-
-}
-
-.cockie:hover {
-    transform: scale(1.05);
-}
-
-    .cockie button:active {
-        transform: scale(1.05);
+    .aside2 h1 {
+        text-align: center;
+        font-size: 2em;
     }
 
-
-.aside2 h1 {
-    text-align: center;
-    font-size: 2em;
-}
-
-.aside2 h1 {
-    width: 50%;
-    margin: 0 auto;
-    color: white;
-    background-color: #817b7e94;
-    border-radius: 7px 7px 7px;
-}
-
-    #upgradeButtons {
-        display: flex;
-        flex-wrap: wrap;
-        padding-top: 2%;
-    }
-
-        #upgradeButtons button {
-            height: 100px;
-            width: 90%;
+        .aside2 h1 {
+            width: 50%;
             margin: 0 auto;
-            border-radius: 5px 5px 5px;
-            margin-bottom: 5%;
             color: white;
-            font-size: 2.5em;
-            font-family: 'Times New Roman', Times, serif;
-            text-align: end;
+            background-color: #817b7e94;
+            border-radius: 7px 7px 7px;
         }
 
-            button:hover {
-                cursor: pointer;
-                transform: scale(1.02);
+            #upgradeButtons {
+                display: flex;
+                flex-wrap: wrap;
+                padding-top: 2%;
             }
 
-            #Kurtsorea {
-                background-image: url(../IMG/Kurtsorea.png);
-                background-size: auto;
-            }
-            
-            #Amona {
-                background-image: url(../IMG/amona.png);
-            }
-            
-            #Baserria {
-                background-image: url(../IMG/baserria.png);
-            }
-            
-            #Meatze {
-                background-image: url(../IMG/meatze.png);
-            }
+                #upgradeButtons button {
+                    height: 100px;
+                    width: 90%;
+                    margin: 0 auto;
+                    border-radius: 5px 5px 5px;
+                    margin-bottom: 5%;
+                    color: white;
+                    font-size: 2.5em;
+                    font-family: 'Times New Roman', Times, serif;
+                    text-align: end;
+                }
+
+                    button:hover {
+                        cursor: pointer;
+                        transform: scale(1.02);
+                    }
+
+                        #Kurtsorea {
+                            background-image: url(../IMG/Kurtsorea.png);
+                            background-size: auto;
+                        }           
+                        #Amona {
+                            background-image: url(../IMG/amona.png);
+                        }           
+                        #Baserria {
+                            background-image: url(../IMG/baserria.png);
+                        }
+                        #Meatze {
+                            background-image: url(../IMG/meatze.png);
+                        }

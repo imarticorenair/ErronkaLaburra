@@ -50,36 +50,42 @@
     </style>
 </head>
 <body class="login">
-    <div id="overlay"></div>
-    <div id="loader"></div>
-
-    <div class="container">
-        <h1>
-            <span class="first-letter">C</span>ookie <span class="first-letter">C</span>licker
-        </h1>
-        <h3>BY: Ivan Hernandez & Iñigo Marticorena</h3>
-        <div id="botoia">
-            <input type="button" value="HASI JOKATZEN" onclick="startGame()">
+    <section>
+        <div id="overlay"></div>
+        <div id="loader"></div>
+    
+        <div class="container">
+            <h1>
+                <span class="first-letter">C</span>ookie <span class="first-letter">C</span>licker
+            </h1>
+            <h3>BY: Ivan Hernandez & Iñigo Marticorena</h3>
+            <div id="botoia">
+                <input type="button" value="HASI JOKATZEN" onclick="startGame()">
+            </div>
         </div>
-    </div>
-
-    <script>
-
-        function startGame() {
-            document.getElementById("overlay").style.display = "block";
-            document.getElementById("loader").style.display = "block";
-
-            setTimeout(function() {
-                window.location.href = 'index.html';
-            }, 500);
-        }
-
-        window.addEventListener('pageshow', function(event) {
-            if (event.persisted) {
-                document.getElementById("overlay").style.display = "none";
-                document.getElementById("loader").style.display = "none";
+    
+        <script>
+    
+            function startGame() {
+                document.getElementById("overlay").style.display = "block";
+                document.getElementById("loader").style.display = "block";
+    
+                setTimeout(function() {
+                    window.location.href = 'index.html';
+                }, 500);
             }
-        });
-    </script>
+    
+            window.addEventListener('pageshow', function(event) {
+                if (event.persisted) {
+                    document.getElementById("overlay").style.display = "none";
+                    document.getElementById("loader").style.display = "none";
+                }
+            });
+        </script>
+    </section>
+    <hr id="barra">
+    <aside>
+        <a href="https://github.com/imarticorenair/ErronkaLaburra"><img src="IMG/github.png"></a>
+    </aside>
 </body>
 </html>
