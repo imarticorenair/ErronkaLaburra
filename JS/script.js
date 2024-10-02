@@ -1,5 +1,6 @@
-// COCKIE-A HASIERATU
+// COOCKIE HASIERATU
 let cookie = new Cookie();
+loadProgress();
 
 // HOBEKUNTZAK HASIERATU
 let upgrades = [
@@ -8,6 +9,9 @@ let upgrades = [
     new Upgrade("Baserria", 1000, 20),
     new Upgrade("Meatze", 5000, 100)
 ];
+
+// Gordeta zerbaita badago berresuratu
+loadUpgradeProgress();
 
 function displayUpgrades() {
     let upgradeButtonsDiv = document.getElementById("upgradeButtons");
@@ -24,6 +28,7 @@ function displayUpgrades() {
 
 function addCookie() {
     cookie.addCookie();
+    saveProgress();
 }
 
 function buyUpgrade(upgrade) {
@@ -34,6 +39,7 @@ function buyUpgrade(upgrade) {
         upgrade.addLevel();
         cookie.updateDisplay();
         displayUpgrades();
+        saveProgress();
         console.log(`${upgrade.name} erosi duzu!`);
     } else {
         console.log("Ez duzu nahikoa gailetarik!");
@@ -44,15 +50,50 @@ function buyUpgrade(upgrade) {
 
 setInterval(() => {
     cookie.produceCookies();
+    saveProgress();
 }, 1000);
 
 function aldatuIzena() {
     let izena = prompt("Sartu zure okindegiaren izena");
     console.log(izena);
-
     document.getElementById('tituloa').innerHTML = izena + " okindegia";
+    localStorage.setItem('okindegiareIzena', izena); // Izena gorde
+}
 
+function saveProgress() {
+    localStorage.setItem('gailetak', cookie.cookieCount);  // Gaileten zenbakia gorde
+    localStorage.setItem('produkzioa', cookie.productionRate);  // Produkzioa gorde
+    // Mailak gorde
+    for (let upgrade of upgrades) {
+        localStorage.setItem(upgrade.name + '_level', upgrade.level);
+    }
+}
+
+function loadProgress() {
+    let gailetakGorde = localStorage.getItem('gailetak');
+    let produkzioaGorde = localStorage.getItem('produkzioa');
+    let izenaGorde = localStorage.getItem('okindegiareIzena');
     
+    if (gailetakGorde !== null) {
+        cookie.cookieCount = parseInt(gailetakGorde);
+    }
+    
+    if (produkzioaGorde !== null) {
+        cookie.productionRate = parseFloat(produkzioaGorde);
+    }
+
+    if (izenaGorde !== null) {
+        document.getElementById('tituloa').innerHTML = izenaGorde + " okindegia";
+    }
+}
+
+function loadUpgradeProgress() {
+    for (let upgrade of upgrades) {
+        let savedLevel = localStorage.getItem(upgrade.name + '_level');
+        if (savedLevel !== null) {
+            upgrade.level = parseInt(savedLevel);
+        }
+    }
 }
 
 displayUpgrades();
