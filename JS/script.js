@@ -1,6 +1,7 @@
 // COOCKIE HASIERATU
 let cookie = new Cookie();
 loadProgress();
+updateCookieDisplay(); // Check the cookie count immediately after loading progress
 
 // HOBEKUNTZAK HASIERATU
 let upgrades = [
@@ -10,7 +11,7 @@ let upgrades = [
     new Upgrade("Meatze", 5000, 100)
 ];
 
-// Gordeta zerbaita badago berresuratu
+// Gordeta dagoen upgradeak berreskuratu
 loadUpgradeProgress();
 
 function displayUpgrades() {
@@ -25,9 +26,9 @@ function displayUpgrades() {
     }    
 }
 
-
 function addCookie() {
     cookie.addCookie();
+    updateCookieDisplay(); // Update the display each time a cookie is added
     saveProgress();
 }
 
@@ -47,10 +48,10 @@ function buyUpgrade(upgrade) {
     }
 }
 
-
 setInterval(() => {
     cookie.produceCookies();
     saveProgress();
+    updateCookieDisplay(); // Update display regularly
 }, 1000);
 
 function aldatuIzena() {
@@ -65,7 +66,8 @@ function saveProgress() {
     localStorage.setItem('produkzioa', cookie.productionRate);  // Produkzioa gorde
     // Mailak gorde
     for (let upgrade of upgrades) {
-        localStorage.setItem(upgrade.name + '_level', upgrade.level);
+        localStorage.setItem(upgrade.name + 'level', upgrade.level);
+        localStorage.setItem(upgrade.name + "cost", upgrade.quantity);
     }
 }
 
@@ -85,15 +87,56 @@ function loadProgress() {
     if (izenaGorde !== null) {
         document.getElementById('tituloa').innerHTML = izenaGorde + " okindegia";
     }
+
+    console.log(gailetakGorde);
+    console.log(produkzioaGorde);
+    console.log(izenaGorde);
 }
 
 function loadUpgradeProgress() {
     for (let upgrade of upgrades) {
-        let savedLevel = localStorage.getItem(upgrade.name + '_level');
-        if (savedLevel !== null) {
-            upgrade.level = parseInt(savedLevel);
+        let mailaGorde = localStorage.getItem(upgrade.name + 'level');
+        let kostuaGorde = localStorage.getItem(upgrade.name + 'cost');
+        if (mailaGorde !== null) {
+            upgrade.level = parseInt(mailaGorde);
+            console.log(mailaGorde);
+        }
+        if (kostuaGorde != null) {
+            upgrade.quantity = parseInt(kostuaGorde);
+            console.log(kostuaGorde);
         }
     }
 }
+
+function updateCookieDisplay() {
+    // Check the cookie count and update the display accordingly
+    if (cookie.cookieCount >= 100000) {
+        document.getElementById('coockie').style.backgroundImage = "url('../img/sorpresa.png')";
+    } else {
+        document.getElementById('coockie').style.backgroundImage = ""; // Reset background image
+        document.getElementById('coockie').innerHTML = "🍪"; // Default display
+    }
+}
+
+
+function clearStorage() {
+    localStorage.clear(); 
+
+    cookie.cookieCount = 0;
+    cookie.productionRate = 0;
+
+    for (let upgrade of upgrades) {
+        upgrade.quantity = 0; 
+        upgrade.level = 0; 
+    }
+
+    console.log("Guztia borratu da");
+    alert("Dirudi coockien moustroa, gaileta guztiak lapurtu dituela, kontuz izan!")
+    cookie.updateDisplay();
+    updateCookieDisplay();
+}
+
+
+
 
 displayUpgrades();
