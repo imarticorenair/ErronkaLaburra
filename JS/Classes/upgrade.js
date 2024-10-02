@@ -4,6 +4,7 @@ class Upgrade {
         this.baseCost = baseCost;
         this.production = production;
         this.quantity = 0;
+        this.level = 0;
     }
 
     getCost() {
@@ -13,5 +14,9 @@ class Upgrade {
     buy() {
         this.quantity += 1;
         return this.production;
+    }
+
+    addLevel() {
+        this.level++;
     }
 }

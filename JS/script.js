@@ -14,14 +14,13 @@ function displayUpgrades() {
     upgradeButtonsDiv.innerHTML = '';
     for (let upgrade of upgrades) {
         let button = document.createElement("button");
-        button.innerText = `${upgrade.name} (${upgrade.getCost()} gaileta)`;
+        button.innerText = `${upgrade.name}: ${upgrade.getCost()} 🍪 lvl: ${upgrade.level}`;
         button.onclick = () => buyUpgrade(upgrade);
-
-        // Asignar un ID o clase basado en el nombre del upgrade
-        button.id = upgrade.name; // Esto establece el ID del botón
+        button.id = upgrade.name; 
         upgradeButtonsDiv.appendChild(button);
     }    
 }
+
 
 function addCookie() {
     cookie.addCookie();
@@ -32,63 +31,28 @@ function buyUpgrade(upgrade) {
     if (cookie.cookieCount >= cost) {
         cookie.cookieCount -= cost;
         cookie.productionRate += upgrade.buy();
+        upgrade.addLevel();
         cookie.updateDisplay();
         displayUpgrades();
-        alert(`${upgrade.name} erosi duzu!`);
+        console.log(`${upgrade.name} erosi duzu!`);
     } else {
+        console.log("Ez duzu nahikoa gailetarik!");
         alert("Ez duzu nahikoa gailetarik!");
     }
 }
+
 
 setInterval(() => {
     cookie.produceCookies();
 }, 1000);
 
-displayUpgrades();
+function aldatuIzena() {
+    let izena = prompt("Sartu zure okindegiaren izena");
+    console.log(izena);
 
-/*
-// COCKIE-A HASIERATU
-let cookie = new Cookie();
+    document.getElementById('tituloa').innerHTML = izena + " okindegia";
 
-// HOBEKUNTZAK HASIERATU
-let upgrades = [
-    new Upgrade("Kurtsorea", 10, 0.1),
-    new Upgrade("Amona", 100, 10),
-    new Upgrade("Baserria", 1000, 20),
-    new Upgrade("Meatze", 5000, 100)
-];
-
-function displayUpgrades() {
-    let upgradeButtonsDiv = document.getElementById("upgradeButtons");
-    upgradeButtonsDiv.innerHTML = '';
-    for (let upgrade of upgrades) {
-        let button = document.createElement("button");
-        button.innerText = `${upgrade.name} (${upgrade.getCost()} gaileta)`;
-        button.onclick = () => buyUpgrade(upgrade);
-        upgradeButtonsDiv.appendChild(button);
-    }    
+    
 }
-
-function addCookie() {
-    cookie.addCookie();
-}
-
-function buyUpgrade(upgrade) {
-    let cost = upgrade.getCost();
-    if (cookie.cookieCount >= cost) {
-        cookie.cookieCount -= cost;
-        cookie.productionRate += upgrade.buy();
-        cookie.updateDisplay();
-        displayUpgrades();
-        alert(`${upgrade.name} erosi duzu!`);
-    } else {
-        alert("Ez duzu nahikoa gailetarik!");
-    }
-}
-
-setInterval(() => {
-    cookie.produceCookies();
-}, 1000);
 
 displayUpgrades();
-*/
