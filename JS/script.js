@@ -49,6 +49,9 @@ function addCookie() {
         cookie.addCookie();  
     }
 
+    let soinua = document.getElementById('soinua');
+    soinua.play();
+
     updateCookieDisplay();  
     saveProgress(); 
 }
@@ -229,6 +232,8 @@ function clearStorage() {
     updateCookieDisplay();
     displayUpgrades();
 }
+
+
 
 
 displayUpgrades();
