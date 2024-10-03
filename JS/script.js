@@ -26,11 +26,39 @@ function displayUpgrades() {
     }    
 }
 
+let goldenCount = false;  
+let goldenActive = false;
+
 function addCookie() {
-    cookie.addCookie();
-    updateCookieDisplay(); // Update the display each time a cookie is added
-    saveProgress();
+    if (goldenActive) {
+        cookie.cookieCount += 10;  
+    } else {
+        cookie.addCookie();  
+    }
+
+    updateCookieDisplay();  
+    saveProgress(); 
 }
+
+function goldenCoockie() {
+    if (cookie.cookieCount >= 1000) {  
+        if (!goldenCount) {
+            goldenCount = true;
+            goldenActive = true;  
+            alert("Golden cookie aktibatuta! ");
+    
+            setTimeout(() => {
+                goldenActive = false;  
+                console.log("30s bonifikazioa bukatu da");
+            }, 30000);
+        } else {
+            alert("Kontuz, golden coockie behin bakarrik erabili dezakezu!")
+        } 
+    } else {
+        alert("Kontuz, golden cookie-a 1000 coockie baino gehiago dituzunean erabili dezakezu");
+    }
+}
+
 
 function buyUpgrade(upgrade) {
     let cost = upgrade.getCost();
@@ -64,6 +92,7 @@ function aldatuIzena() {
 function saveProgress() {
     localStorage.setItem('gailetak', cookie.cookieCount);  // Gaileten zenbakia gorde
     localStorage.setItem('produkzioa', cookie.productionRate);  // Produkzioa gorde
+    localStorage.setItem('goldenCoockie', goldenCount); // Golden coockia erabili den gorde
     // Mailak gorde
     for (let upgrade of upgrades) {
         localStorage.setItem(upgrade.name + 'level', upgrade.level);
@@ -87,7 +116,6 @@ function loadProgress() {
     if (izenaGorde !== null) {
         document.getElementById('tituloa').innerHTML = izenaGorde + " okindegia";
     }
-
     console.log(gailetakGorde);
     console.log(produkzioaGorde);
     console.log(izenaGorde);
@@ -119,11 +147,15 @@ function updateCookieDisplay() {
 }
 
 
+
+
+
 function clearStorage() {
     localStorage.clear();
 
     cookie.cookieCount = 0;
     cookie.productionRate = 0;
+    goldenCount = false;
 
     for (let upgrade of upgrades) {
         upgrade.level = 0;
