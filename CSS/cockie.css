@@ -233,6 +233,32 @@ header {
     .powerups button {
         width: 20%;
         height: 115px;
-        border-radius: 7px 7px 7px;
+        border-radius: 7px;
         border: 2px solid gray;
+        position: relative; /* To position the popover relative to the button */
     }
+
+        .ezkut {
+            visibility: hidden;
+            width: 200px; /* Adjust as necessary */
+            background-image: url(../IMG/fondo.webp);
+            color: #fff;
+            text-align: center;
+            font-size: 1.8em;
+            padding: 5px;
+            border: 1px solid black;
+            border-radius: 6px;
+            position: absolute;
+            z-index: 1;
+            bottom: 120%; /* Position above the button */
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            box-shadow: 5px 5px 10px;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+            .powerups button:hover .ezkut, .ezkut:hover {
+                visibility: visible;
+                opacity: 1;
+            }
