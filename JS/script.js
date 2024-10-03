@@ -51,7 +51,7 @@ function buyUpgrade(upgrade) {
 setInterval(() => {
     cookie.produceCookies();
     saveProgress();
-    updateCookieDisplay(); // Update display regularly
+    updateCookieDisplay();
 }, 1000);
 
 function aldatuIzena() {
@@ -109,7 +109,8 @@ function loadUpgradeProgress() {
 }
 
 function updateCookieDisplay() {
-    if (cookie.cookieCount >= 100000) {
+    document.getElementById('coockie').innerHTML = "🍪";
+    if (cookie.cookieCount >= 1000000) {
         document.getElementById('coockie').style.backgroundImage = "url('../img/sorpresa.png')";
     } else {
         document.getElementById('coockie').style.backgroundImage = "";
@@ -119,23 +120,33 @@ function updateCookieDisplay() {
 
 
 function clearStorage() {
-    localStorage.clear(); 
+    localStorage.clear();
 
     cookie.cookieCount = 0;
     cookie.productionRate = 0;
 
     for (let upgrade of upgrades) {
-        upgrade.quantity = 0; 
-        upgrade.level = 0; 
+        upgrade.level = 0;
+        upgrade.quantity = 0;
+
+        if (upgrade.name === "Kurtsorea") {
+            upgrade.cost = 10;
+        } else if (upgrade.name === "Amona") {
+            upgrade.cost = 100;
+        } else if (upgrade.name === "Baserria") {
+            upgrade.cost = 1000;
+        } else if (upgrade.name === "Meatze") {
+            upgrade.cost = 5000;
+        }
     }
 
     console.log("Guztia borratu da");
-    alert("Dirudi coockien moustroa, gaileta guztiak lapurtu dituela, kontuz izan!")
+    alert("Dirudi coockien moustroa, gaileta guztiak lapurtu dituela, kontuz izan!");
+
     cookie.updateDisplay();
     updateCookieDisplay();
+    displayUpgrades();
 }
-
-
 
 
 displayUpgrades();
