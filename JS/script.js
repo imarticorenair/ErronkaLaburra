@@ -29,9 +29,22 @@ function displayUpgrades() {
 let goldenCount = false;  
 let goldenActive = false;
 
+let dyamondCount = false;
+let dyamondActive = false;
+
+let rubyCount = false;
+let rubyActive = false;
+
 function addCookie() {
     if (goldenActive) {
         cookie.cookieCount += 10;  
+        updateCookieDisplay();  
+    } else if (dyamondActive) {
+        cookie.cookieCount += 500;  
+        updateCookieDisplay();  
+    } else if (rubyActive) {
+        cookie.cookieCount += 1000;  
+        updateCookieDisplay();  
     } else {
         cookie.addCookie();  
     }
@@ -49,8 +62,8 @@ function goldenCoockie() {
     
             setTimeout(() => {
                 goldenActive = false;  
-                console.log("30s bonifikazioa bukatu da");
-            }, 30000);
+                console.log("1min bonifikazioa bukatu da");
+            }, 100000);
         } else {
             alert("Kontuz, golden coockie behin bakarrik erabili dezakezu!")
         } 
@@ -59,6 +72,43 @@ function goldenCoockie() {
     }
 }
 
+function dyamondCoockie() {
+    if (cookie.cookieCount >= 25000) {  
+        if (!dyamondCount) {
+            dyamondCount = true;
+            dyamondActive = true;  
+            alert("Dyamond cookie aktibatuta! ");
+    
+            setTimeout(() => {
+                dyamondActive = false;  
+                console.log("30s bonifikazioa bukatu da");
+            }, 30000);
+        } else {
+            alert("Kontuz, Dyamond coockie behin bakarrik erabili dezakezu!")
+        } 
+    } else {
+        alert("Kontuz, Dyamond cookie-a 25000 coockie baino gehiago dituzunean erabili dezakezu");
+    }
+}
+
+function rubyCoockie() {
+    if (cookie.cookieCount >= 50000) {  
+        if (!rubyCount) {
+            rubyCount = true;
+            rubyActive = true;  
+            alert("Ruby cookie aktibatuta! ");
+    
+            setTimeout(() => {
+                rubyActive = false;  
+                console.log("15s bonifikazioa bukatu da");
+            }, 15000);
+        } else {
+            alert("Kontuz, Ruby coockie behin bakarrik erabili dezakezu!")
+        } 
+    } else {
+        alert("Kontuz, Ruby cookie-a 50000 coockie baino gehiago dituzunean erabili dezakezu");
+    }
+}
 
 function buyUpgrade(upgrade) {
     let cost = upgrade.getCost();
