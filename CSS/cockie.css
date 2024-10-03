@@ -262,3 +262,13 @@ header {
                 visibility: visible;
                 opacity: 1;
             }
+
+                #prezioak h3 {
+                    width: 100%;
+                    font-size: 1.4em;
+                    margin: 0 auto;
+                    color: white;
+                    background-color: #817b7e94;
+                    border-radius: 7px 7px 7px;
+
+                }
