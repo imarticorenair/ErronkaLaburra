@@ -199,10 +199,6 @@ function updateCookieDisplay() {
     }
 }
 
-
-
-
-
 function clearStorage() {
     localStorage.clear();
 
@@ -232,8 +228,5 @@ function clearStorage() {
     updateCookieDisplay();
     displayUpgrades();
 }
-
-
-
 
 displayUpgrades();
