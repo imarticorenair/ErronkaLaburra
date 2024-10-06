@@ -14,18 +14,22 @@ let upgrades = [
 // Gordeta dagoen upgradeak berreskuratu
 loadUpgradeProgress();
 
+// Upgradeak pantailan agertzen dira
 function displayUpgrades() {
     let upgradeButtonsDiv = document.getElementById("upgradeButtons");
     upgradeButtonsDiv.innerHTML = '';
     for (let upgrade of upgrades) {
         let button = document.createElement("button");
         button.innerText = `${upgrade.name}: ${upgrade.getCost()} 🍪 lvl: ${upgrade.level}`;
-        button.onclick = () => buyUpgrade(upgrade);
+        button.onclick = function() { 
+            buyUpgrade(upgrade); 
+        };
         button.id = upgrade.name; 
         upgradeButtonsDiv.appendChild(button);
     }    
 }
 
+// Powerup erabiltzeko behar diren aldagaiak sortu
 let goldenCount = false;  
 let goldenActive = false;
 
@@ -35,6 +39,7 @@ let dyamondActive = false;
 let rubyCount = false;
 let rubyActive = false;
 
+// click egitean balioa aldatzeko
 function addCookie() {
     if (goldenActive) {
         cookie.cookieCount += 10;  
@@ -129,6 +134,7 @@ function buyUpgrade(upgrade) {
     }
 }
 
+// Segunduro datuak gordetze ditu
 setInterval(() => {
     cookie.produceCookies();
     saveProgress();
